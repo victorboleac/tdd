@@ -27,4 +27,15 @@ public class Tasks {
         }
         return sum;
     }
+
+    public Double findArrayMean(Number[] values) {
+        Double mean = null;
+        Double sum = 0.0;
+        if (values.length > 0) {
+            for (Number number : values) sum += number.doubleValue();
+            mean = sum / values.length;
+            return mean;
+        }
+        return mean;
+    }
 }
