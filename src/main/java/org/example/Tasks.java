@@ -38,4 +38,17 @@ public class Tasks {
         }
         return mean;
     }
+    public int addingASCIICodes(String input){
+        int sum = 0;
+        if(input.isEmpty()){
+            return 0;
+        }
+        char[] chArray = input.toCharArray();
+        for(char ch: chArray){
+            if(!Character.isLetterOrDigit(ch)) return -1;
+            sum += (int) ch;
+        }
+
+        return sum;
+    }
 }

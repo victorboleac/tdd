@@ -87,7 +87,48 @@ class TasksTest {
         );
 
 
-    }
 
+    }
+    @Test
+    @DisplayName("testing an empty string")
+    void testAddingASCIICodes_forAnEmptyString(){
+    // Arrange
+        String input = "";
+        Tasks task = new Tasks();
+    // Act
+        int result = task.addingASCIICodes(input);
+    // Assert
+        assertEquals(0, result);
+
+
+}
+    @Test
+    @DisplayName("testing a String with non-alphanumeric characters")
+    void testAddingASCIICodes_forAStringWithNonAlphaNumericCharacters(){
+        // Arrange
+        String input = "Hello!";
+        Tasks task = new Tasks();
+        // Act
+        int result = task.addingASCIICodes(input);
+        // Assert
+        assertEquals(-1, result);
+    }
+    @Test
+    @DisplayName("testing a String with alphanumeric characters")
+    void testAddingASCIICodes_forAStringWithAlphaNumericCharacters(){
+        // Arrange
+        String input1 = "northcoders";
+        String input2 = "Northcoders";
+        String input3 = "a";
+        Tasks task = new Tasks();
+        // Act
+        int result1 = task.addingASCIICodes(input1);
+        int result2 = task.addingASCIICodes(input2);
+        int result3 = task.addingASCIICodes(input3);
+        // Assert
+        assertEquals(1195, result1);
+        assertEquals(1163, result2);
+        assertEquals(97, result3);
+    }
 
 }
